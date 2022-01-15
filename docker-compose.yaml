@@ -1,0 +1,15 @@
+version: '2'
+services:
+  ql:
+    image: whyour/qinglong
+    container_name: ql
+    restart: always
+    volumes:
+      - ./data/config:/ql/config
+      - ./data/log:/ql/log
+      - ./data/db:/ql/db
+      - ./data/scripts:/ql/scripts
+      - ./data/repo:/ql/repo
+      - ./data/raw:/ql/raw
+    ports:
+      - "5802:5700"
